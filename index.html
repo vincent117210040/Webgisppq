@@ -86,7 +86,7 @@
         }, true);
         L.control.locate({locateOptions: {maxZoom: 19}}).addTo(map);
         var measureControl = new L.Control.Measure({
-            position: 'topleft',
+            position: 'topright',
             primaryLengthUnit: 'meters',
             secondaryLengthUnit: 'kilometers',
             primaryAreaUnit: 'sqmeters',
@@ -129,19 +129,13 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
-                    </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['x'] !== null ? autolinker.link(feature.properties['x'].toLocaleString()) : '') + '</td>\
-                    </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['y'] !== null ? autolinker.link(feature.properties['y'].toLocaleString()) : '') + '</td>\
-                    </tr>\
+                        <tr>\
+                                <td><h3>' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '<h3></td>\
+                            </tr>\
                     <tr>\
-                        <td colspan="2"><strong>ID</strong><br />' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">foto 2</th>\
+                        <th scope="row"></th>\
                         <td>' + (feature.properties['foto 2'] !== null ? '<img src="images/' + String(feature.properties['foto 2']).replace(/[\\\/:]/g, '_').trim() + '">' : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -215,6 +209,7 @@
         setBounds();
         map.addControl(new L.Control.Search({
             layer: layer_fasilitaskesehatan_1,
+            position: 'topright',
             initial: false,
             hideMarkerOnCollapse: true,
             propertyName: 'ID'}));
