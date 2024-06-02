@@ -86,7 +86,7 @@
         }, true);
         L.control.locate({locateOptions: {maxZoom: 19}}).addTo(map);
         var measureControl = new L.Control.Measure({
-            position: 'topright',
+            position: 'topleft',
             primaryLengthUnit: 'meters',
             secondaryLengthUnit: 'kilometers',
             primaryAreaUnit: 'sqmeters',
@@ -209,7 +209,7 @@
         setBounds();
         map.addControl(new L.Control.Search({
             layer: layer_fasilitaskesehatan_1,
-            position: 'topright',
+            position: 'topleft',
             initial: false,
             hideMarkerOnCollapse: true,
             propertyName: 'ID'}));
