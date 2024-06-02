@@ -129,11 +129,14 @@
             });
             var popupContent = '<table>\
                     <tr>\
+                    </tr>\
                     <tr>\
+                    </tr>\
                     <tr>\
-                        <tr>\
-                                <td><h3>' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '<h3></td>\
-                            </tr>\
+                    </tr>\
+                    <tr>\
+                        <td><h3>' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '<h3></td>\
+                    </tr>\
                     <tr>\
                         <th scope="row"></th>\
                         <td>' + (feature.properties['foto 2'] !== null ? '<img src="images/' + String(feature.properties['foto 2']).replace(/[\\\/:]/g, '_').trim() + '">' : '') + '</td>\
@@ -161,6 +164,10 @@
                     <tr>\
                         <th scope="row">Website</th>\
                         <td>' + (feature.properties['Website'] !== null ? autolinker.link(feature.properties['Website'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Link GMaps</th>\
+                        <td>' + (feature.properties['Link GMaps'] !== null ? autolinker.link(feature.properties['Link GMaps'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -209,7 +216,6 @@
         setBounds();
         map.addControl(new L.Control.Search({
             layer: layer_fasilitaskesehatan_1,
-            position: 'topleft',
             initial: false,
             hideMarkerOnCollapse: true,
             propertyName: 'ID'}));
